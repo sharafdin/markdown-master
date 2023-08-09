@@ -1,11 +1,18 @@
 {
-  "name": "sharafdin",
+  "name": "markdown-master",
   "displayName": "Markdown Master",
-  "description": "",
-  "version": "0.0.1",
+  "description": "This extension helps you to write ReactJs 10x faster.",
+  "version": "1.0.0",
+  "publisher": "Sharafdin",
+  "author": {
+		"name": "Mr Sharafdin",
+		"email": "isesharafdin@gmail.com"
+	},
+  "icon": "media/icon/markdown.jpeg",
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.80.0"
   },
+  "license": "MIT LICENSE",
   "categories": [
     "Other"
   ],
@@ -17,7 +24,7 @@
         {
           "id": "Markdown-Master-sidebar-view",
           "title": "Markdown Master",
-          "icon": "media/markdown.svg"
+          "icon": "media/icon/markdown.svg"
         }
       ]
     },
