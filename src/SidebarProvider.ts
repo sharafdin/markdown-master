@@ -108,7 +108,7 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
       <input style="border: 1px solid" type="text" placeholder="Enter your paragraph">
       
       <button id='Generate'>Generate</button>
-      <button id='preview'>Preview</button>
+      <!-- <button id='preview'>Preview</button> -->
       <br />
       <br />
       <br />

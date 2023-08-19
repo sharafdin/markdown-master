@@ -2,12 +2,19 @@
   "name": "markdown-master",
   "displayName": "Markdown Master",
   "description": "Elevate your Markdown editing in Visual Studio Code with Markdown Master. Enjoy a user-friendly interface for a smoother, more intuitive way to create and edit your Markdown files.",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "publisher": "Sharafdin",
   "author": {
 		"name": "Mr Sharafdin",
 		"email": "isesharafdin@gmail.com"
 	},
+  "keywords": [
+    "markdown",
+    "md",
+    "gui",
+    "readme",
+    "master"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sharafdin/markdown-master"
