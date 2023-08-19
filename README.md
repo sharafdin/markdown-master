@@ -2,7 +2,7 @@ This extension is currently in testing.
 
 # Markdown Master - Visual Studio Code Extension
 
-![Markdown Master Logo](media/icons/markdown.svg)
+![Markdown Master Logo](./media/icons/markdown.svg)
 
 *Markdown Master* is a powerful Visual Studio Code extension that elevates your Markdown editing experience to new heights. Developed by Sharafdin, this open-source extension is designed to provide a user-friendly graphical interface for writing Markdown, while seamlessly integrating a real-time preview feature. Say goodbye to flipping between different views and embrace a smoother, more intuitive way to create and edit your Markdown files.
 
