@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/sharafdin/markdown-master"
   },
-  "icon": "media/icons/markdown.svg",
+  "icon": "media/icons/Master.png",
   "engines": {
     "vscode": "^1.81.0"
   },
