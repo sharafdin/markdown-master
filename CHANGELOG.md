@@ -2,6 +2,6 @@
 
 All notable changes to the "sharafdin" extension will be documented in this file.
 
-## [Unreleased]
+## [Unreleased] 2023-08-19
 
-- Initial release
+- Testing release
