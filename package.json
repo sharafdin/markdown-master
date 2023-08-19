@@ -14,7 +14,7 @@
   },
   "icon": "media/icons/markdown.svg",
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.81.0"
   },
   "license": "MIT LICENSE",
   "categories": [
