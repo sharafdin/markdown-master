@@ -23,27 +23,37 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
 
     webviewView.webview.onDidReceiveMessage(async (data) => {
       switch (data.command) {
-        case 'generateFile':
-            if (!vscode.workspace.workspaceFolders) {
-                vscode.window.showErrorMessage('Please open a workspace before trying to generate a file.');
-                return;
-            }
+        case "generateFile":
+          if (!vscode.workspace.workspaceFolders) {
+            vscode.window.showErrorMessage(
+              "Please open a workspace before trying to generate a file."
+            );
+            return;
+          }
 
-            const content = data.content;
-            const fileName = data.fileName;
-            const folderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-            fs.writeFile(path.join(folderPath, `${fileName? fileName : 'README'}.md`), content, (err:any) => {
-                if (err) {
-                    console.error(err);
-                    return vscode.window.showErrorMessage('Failed to generate README.md file😑');
-                } else{
-                  return vscode.window.showInformationMessage('Successfully generated a README.md file🎉');
-                }
-            });
-          case 'preview':
-            break;
-    }
-      
+          const content = data.content;
+          const fileName = data.fileName;
+          const folderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
+          fs.writeFile(
+            path.join(folderPath, `${fileName ? fileName : "README"}.md`),
+            content,
+            (err: any) => {
+              if (err) {
+                console.error(err);
+                return vscode.window.showErrorMessage(
+                  "Failed to generate README.md file😑"
+                );
+              } else {
+                return vscode.window.showInformationMessage(
+                  "Successfully generated a README.md file🎉"
+                );
+              }
+            }
+          );
+        case "preview":
+          break;
+      }
+
       switch (data.type) {
         case "onInfo": {
           if (!data.value) {
@@ -78,7 +88,6 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
       vscode.Uri.joinPath(this._extensionUri, "media", "vscode.css")
     );
 
-
     // Use a nonce to only allow a specific script to be run.
     const nonce = getNonce();
 
@@ -90,9 +99,7 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
 					Use a content security policy to only allow loading images from https or from our extension directory,
 					and only allow scripts that have a specific nonce.
         -->
-        <meta http-equiv="Content-Security-Policy" content="img-src https: data:; style-src 'unsafe-inline' ${
-          webview.cspSource
-        };
+        <meta http-equiv="Content-Security-Policy" content="img-src https: data:; style-src 'unsafe-inline' ${webview.cspSource};
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<link href="${styleResetUri}" rel="stylesheet">
 				<link href="${styleVSCodeUri}" rel="stylesheet">
@@ -103,23 +110,23 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
       <h3>Welcome to Markdown Master</h3>
       <p>Write Markdown files in GUI</p>
       <form>
-      <!-- <input style="border: 1px solid" type="text" placeholder="Enter your MD name with out (.md)"> -->
-      <input style="border: 1px solid" type="text" placeholder="File name with out (.md)">
-      <input style="border: 1px solid" type="text" placeholder="Enter your paragraph">
+      <p style="font-size: 12px">Enter below a file name or leave it blank for "README.md"</p>
+      <input style="border: 1px solid" type="text" placeholder='Enter with out (.md)'>
+      <textarea style="border: 1px solid" type="text" placeholder="Enter your paragraph"></textarea>
       
       <button id='Generate'>Generate</button>
-      <!-- <button id='preview'>Preview</button> -->
+      <button id='preview'>Preview</button>
       <br />
       <br />
       <br />
       
-      <p style="color: #fff; text-align: center"> &copy; Sharafdin</p>
       </form>
-
-      <div class="content" id="content">
-
+      <div class="preview" id="preview">
+      <h1 class="previewText"></h1>
+      <br />
+      <div class="content"></div>
       </div>
-
+      <p style="color: #fff; text-align: center"> &copy; Sharafdin</p>
       <script src="${scriptUri}" nonce="${nonce}">
       
 			</body>
