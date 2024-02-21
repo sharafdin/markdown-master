@@ -1,5 +1,3 @@
-This extension is currently in testing.
-
 # Markdown Master - Visual Studio Code Extension
 
 ![Markdown Master Logo](./media/icons/Master.png)
